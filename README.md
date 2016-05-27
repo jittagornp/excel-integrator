@@ -1,6 +1,6 @@
 # excel-integrator
 
-ไวสำหรับรวม excel ไฟล์ (sheets) อื่นๆ ให้เป็น excel ไฟล์เดียว
+ไว้สำหรับรวม excel ไฟล์ (sheets) อื่นๆ ให้เป็น excel ไฟล์เดียว
 ```
 File mergedFile = ExcelSheetIntegrator.newInstance()
                 .addExcelFile(exFile1)
