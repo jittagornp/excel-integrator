@@ -119,10 +119,10 @@ public class ExcelSheetIntegrator {
 
         Sheet destSheet = createSheet(destWorkbook, sheetName);
         copySheet(srcSheet, destSheet);
-        copdyMergedRegion(srcSheet, destSheet, index);
+        copyMergedRegion(srcSheet, destSheet, index);
     }
 
-    private void copdyMergedRegion(Sheet srcSheet, Sheet destSheet, int index) {
+    private void copyMergedRegion(Sheet srcSheet, Sheet destSheet, int index) {
         destSheet.setColumnWidth(index, srcSheet.getColumnWidth(index));
         try {
             destSheet.addMergedRegion(srcSheet.getMergedRegion(index));
