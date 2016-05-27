@@ -21,7 +21,7 @@ File file3 = new File("file3.xlsx");
 ExcelFile exFile1 = ExcelFile.from(file1).andWithSheetName("ชื่อ sheet 1").andWithSheetName("ชื่อ sheet 2");
 //ไฟล์นี้มี sheet เดียว
 ExcelFile exFile2 = ExcelFile.from(file2).andWithSheetName("ชื่อ sheet 3");
-//ไฟล์นี้มี sheet เดีย
+//ไฟล์นี้มี sheet เดียว
 ExcelFile exFile3 = ExcelFile.from(file3).andWithSheetName("ชื่อ sheet 4");
 
 //excel ไฟล์ปลายทาง ตอนที่รวมเสร็จแล้ว
@@ -44,7 +44,7 @@ Sheets ทั้งหมดจาก file1.xlsx, file2.xlsx และ file3.xls
 
 ลูกค้าอยากได้ ข้อมูลต่างๆ รวมอยู่ในไฟล์เดียวกัน<br/>
 ผมก็เลยใช้ iReport ทำ report แต่ละแบบ  แต่ละ sheet แต่ละไฟล์ตามปกติ (เพราะมันสะดวกที่สุดแล้ว)<br/>
-จากนั้นก็ใช้ lib ที่ผมเขียนขึ้นมานี้ เพื่อ integrate sheet ต่างๆ ให้รวมอยู่ในไฟล์เดียว
+จากนั้นก็ใช้ lib ที่ผมเขียนขึ้นมานี้ เพื่อ integrate sheet ต่างๆ ให้รวมอยู่ในไฟล์เดียวกัน<br/>
 แล้วค่อย export ออกมาให้ลูกค้า
 
 หวังว่าจะเป็นประโชน์ ไม่มากก็น้อย  สำหรับคนที่จะเอาไปใช้ต่อ<br/>
