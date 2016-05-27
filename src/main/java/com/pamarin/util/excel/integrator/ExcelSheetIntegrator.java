@@ -69,12 +69,12 @@ public class ExcelSheetIntegrator {
         return inputFiles;
     }
 
-    public File merge() throws IOException {
+    public File integrate() throws IOException {
         Workbook destWorkbook = createWorkbook(outputFile);
         try (OutputStream outputStream = new FileOutputStream(outputFile)) {
             List<ExcelFile> excelFiles = getInputFiles();
             for (ExcelFile excelFile : excelFiles) {
-                mergeSheet(excelFile, destWorkbook);
+                integrateSheet(excelFile, destWorkbook);
             }
 
             destWorkbook.write(outputStream);
@@ -83,7 +83,7 @@ public class ExcelSheetIntegrator {
         return this.outputFile;
     }
 
-    private void mergeSheet(ExcelFile excelFile, Workbook destWorkbook) throws IOException {
+    private void integrateSheet(ExcelFile excelFile, Workbook destWorkbook) throws IOException {
         File file = excelFile.getFile();
         List<String> sheetNames = excelFile.getSheetNames();
 

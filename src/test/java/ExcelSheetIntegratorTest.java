@@ -31,12 +31,12 @@ public class ExcelSheetIntegratorTest {
 
         File output1 = new File(path, "output.xlsx");
 
-        File mergedFile = ExcelSheetIntegrator.newInstance()
+        File integratedFile = ExcelSheetIntegrator.newInstance()
                 .addExcelFile(exFile1)
                 .addExcelFile(exFile2)
                 .addExcelFile(exFile3)
                 .toTargetFile(output1)
-                .merge();
+                .integrate();
     }
 
 }
