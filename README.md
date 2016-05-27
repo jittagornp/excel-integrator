@@ -40,7 +40,7 @@ File integratedFile = ExcelSheetIntegrator.newInstance()
 Sheet จาก file1.xlsx, file2.xlsx และ file3.xlsx จะถูกเอามารวมอยู่ใน file output.xlsx file เดียว
 
 ##เอามาใช้แก้ปัญหาอะไร
-พอดีผมทำ jasper report แล้วมันไม่สามารถทำ multiple sheets ได้  คือแต่ละ sheet มีข้อมูลที่ต่างกันน่ะ ข้อมูลคนละแบบกันเลย
+ผมทำ jasper report แล้วมันไม่สามารถทำ multiple sheets ได้  คือแต่ละ sheet มีข้อมูลที่ต่างกันน่ะ ข้อมูลคนละแบบกันเลย
 
 ลูกค้าอยากได้ ข้อมูลต่างๆ รวมอยู่ใน file เดียวกัน
 ผมก็เลยใช้ iReport ทำ report แต่ละแบบ  แต่ละ sheet แต่ละ file ตามปกติ
