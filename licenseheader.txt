@@ -1,0 +1,7 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix} Copy right 2016 pamarin.com
+<#if licenseLast??>
+${licenseLast}
+</#if>
