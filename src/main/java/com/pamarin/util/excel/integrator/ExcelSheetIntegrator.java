@@ -100,8 +100,16 @@ public class ExcelSheetIntegrator {
         }
     }
 
+    private boolean hasData(Sheet sheet) {
+        return sheet.iterator().hasNext();
+    }
+
     private void copySheets(Workbook srcWorkbook, Workbook destWorkbook, List<String> sheetNames, int index) {
         Sheet srcSheet = srcWorkbook.getSheetAt(index);
+        if (!hasData(srcSheet)) {
+            return;
+        }
+
         String sheetName;
         try {
             sheetName = sheetNames.get(index);
@@ -149,18 +157,18 @@ public class ExcelSheetIntegrator {
     }
 
     private void copySheet(Sheet srcSheet, Sheet destSheet) {
-        Iterator<Row> it = srcSheet.iterator();
-        while (it.hasNext()) {
-            Row srcRow = it.next();
+        Iterator<Row> iterator = srcSheet.iterator();
+        while (iterator.hasNext()) {
+            Row srcRow = iterator.next();
             Row destRow = destSheet.createRow(srcRow.getRowNum());
             copyRow(srcRow, destRow);
         }
     }
 
     private void copyRow(Row srcRow, Row destRow) {
-        Iterator<Cell> it = srcRow.iterator();
-        while (it.hasNext()) {
-            Cell srcCell = it.next();
+        Iterator<Cell> iterator = srcRow.iterator();
+        while (iterator.hasNext()) {
+            Cell srcCell = iterator.next();
             Cell destCell = destRow.createCell(srcCell.getColumnIndex());
             copyCell(srcCell, destCell);
         }
