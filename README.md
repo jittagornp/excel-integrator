@@ -2,12 +2,12 @@
 
 ไว้สำหรับรวม excel ไฟล์ (sheets) อื่นๆ ให้เป็น excel ไฟล์เดียว
 ```java
-File mergedFile = ExcelSheetIntegrator.newInstance()
+File integratedFile = ExcelSheetIntegrator.newInstance()
                 .addExcelFile(exFile1)
                 .addExcelFile(exFile2)
                 .addExcelFile(exFile3)
                 .toTargetFile(output1)
-                .merge();
+                .integrate();
 ```
 ##example
 ```java
@@ -25,10 +25,10 @@ ExcelFile exFile3 = ExcelFile.fromFile(input3).withSheetName("ชื่อ sheet
 File output1 = new File("output.xlsx");
 
 //การเรียกใช้
-File mergedFile = ExcelSheetIntegrator.newInstance()
+File integratedFile = ExcelSheetIntegrator.newInstance()
 		.addExcelFile(exFile1)
 		.addExcelFile(exFile2)
 		.addExcelFile(exFile3)
 		.toTargetFile(output1)
-		.merge();
+		.integrate();
 ```
