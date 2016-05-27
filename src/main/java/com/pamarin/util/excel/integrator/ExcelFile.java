@@ -20,11 +20,11 @@ public class ExcelFile {
         this.file = file;
     }
 
-    public static ExcelFile fromFile(File file) {
+    public static ExcelFile from(File file) {
         return new ExcelFile(file);
     }
 
-    public ExcelFile withSheetName(String sheetName) {
+    public ExcelFile andWithSheetName(String sheetName) {
         getSheetNames().add(sheetName);
         return this;
     }
