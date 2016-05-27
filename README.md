@@ -1,7 +1,7 @@
 # excel-integrator
 
 ไว้สำหรับรวม excel ไฟล์ (sheets) อื่นๆ ให้เป็น excel ไฟล์เดียว
-```
+```java
 File mergedFile = ExcelSheetIntegrator.newInstance()
                 .addExcelFile(exFile1)
                 .addExcelFile(exFile2)
@@ -10,7 +10,7 @@ File mergedFile = ExcelSheetIntegrator.newInstance()
                 .merge();
 ```
 ##example
-```
+```java
 File input1 = new File("file1.xlsx");
 File input2 = new File("file2.xlsx");
 File input3 = new File("file3.xlsx");
