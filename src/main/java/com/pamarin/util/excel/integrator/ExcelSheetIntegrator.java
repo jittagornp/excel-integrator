@@ -131,7 +131,7 @@ public class ExcelSheetIntegrator {
         }
     }
 
-    private boolean isAlreayExistSheet(IllegalArgumentException ex) {
+    private boolean isAlreadyExistSheet(IllegalArgumentException ex) {
         return ex.getMessage()
                 .equals("The workbook already contains a sheet of this name");
     }
@@ -144,7 +144,7 @@ public class ExcelSheetIntegrator {
                 sheet = workbook.createSheet(sheetName);
                 break;
             } catch (IllegalArgumentException ex) {
-                if (isAlreayExistSheet(ex)) {
+                if (isAlreadyExistSheet(ex)) {
                     sheetName = sheetName + "-" + numb;
                     numb = numb + 1;
                 } else {
