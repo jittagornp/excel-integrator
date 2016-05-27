@@ -12,16 +12,20 @@ File integratedFile = ExcelSheetIntegrator.newInstance()
 ##example
 ```java
 //excel file ต่างๆ ที่อยากเอามารวม
-File input1 = new File("file1.xlsx");
-File input2 = new File("file2.xlsx");
-File input3 = new File("file3.xlsx");
+File file1 = new File("file1.xlsx");
+File file2 = new File("file2.xlsx");
+File file3 = new File("file3.xlsx");
 
 //กำหนดว่าจะให้ sheet ต่างๆ ใน excel file เดิม ตอนที่รวมใน file ใหม่แล้วมีชื่อ sheet ว่าอะไรบ้าง
-ExcelFile exFile1 = ExcelFile.from(input1).andWithSheetName("ชื่อ sheet 1").andWithSheetName("ชื่อ sheet 2");
-ExcelFile exFile2 = ExcelFile.from(input2).andWithSheetName("ชื่อ sheet 3");
-ExcelFile exFile3 = ExcelFile.from(input3).andWithSheetName("ชื่อ sheet 4");
+//file นี้มี 2 sheets เลยเปลี่ยนชื่อทั้ง 2 sheets
+ExcelFile exFile1 = ExcelFile.from(file1).andWithSheetName("ชื่อ sheet 1").andWithSheetName("ชื่อ sheet 2");
+//file นี้มี sheet เดียว
+ExcelFile exFile2 = ExcelFile.from(file2).andWithSheetName("ชื่อ sheet 3");
+//file นี้มี sheet เดีย
+ExcelFile exFile3 = ExcelFile.from(file3).andWithSheetName("ชื่อ sheet 4");
 
 //excel file ปลายทาง ตอนที่รวมเสร็จแล้ว
+//ไม่ต้องมีอยู่ก่อนแล้วก็ได้
 File output1 = new File("output.xlsx");
 
 //การเรียกใช้
@@ -32,3 +36,5 @@ File integratedFile = ExcelSheetIntegrator.newInstance()
 		.toTargetFile(output1)
 		.integrate();
 ```
+##จากนั้น
+Sheet จาก file1.xlsx, file2.xlsx และ file3.xlsx จะถูกเอามารวมอยู่ใน file output.xlsx file เดียว
