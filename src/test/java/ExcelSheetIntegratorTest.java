@@ -21,13 +21,13 @@ public class ExcelSheetIntegratorTest {
 
         System.out.println(path);
 
-        File input1 = new File(path, "file1.xlsx");
-        File input2 = new File(path, "file2.xlsx");
-        File input3 = new File(path, "file3.xlsx");
+        File file1 = new File(path, "file1.xlsx");
+        File file2 = new File(path, "file2.xlsx");
+        File file3 = new File(path, "file3.xlsx");
 
-        ExcelFile exFile1 = ExcelFile.from(input1).andWithSheetName("ชื่อ sheet 1").andWithSheetName("ชื่อ sheet 2");
-        ExcelFile exFile2 = ExcelFile.from(input2).andWithSheetName("ชื่อ sheet 3");
-        ExcelFile exFile3 = ExcelFile.from(input3).andWithSheetName("ชื่อ sheet 4");
+        ExcelFile exFile1 = ExcelFile.from(file1).andWithSheetName("ชื่อ sheet 1").andWithSheetName("ชื่อ sheet 2");
+        ExcelFile exFile2 = ExcelFile.from(file2).andWithSheetName("ชื่อ sheet 3");
+        ExcelFile exFile3 = ExcelFile.from(file3).andWithSheetName("ชื่อ sheet 4");
 
         File output1 = new File(path, "output.xlsx");
 
