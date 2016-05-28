@@ -119,12 +119,15 @@ public class ExcelSheetIntegrator {
 
         Sheet destSheet = createSheet(destWorkbook, sheetName);
         copySheet(srcSheet, destSheet);
-        copyMergedRegion(srcSheet, destSheet, index);
+        copyMergedRegion(srcSheet, destSheet);
     }
 
-    private void copyMergedRegion(Sheet srcSheet, Sheet destSheet, int index) {
+    private void copyMergedRegion(Sheet srcSheet, Sheet destSheet) {
         try {
-            destSheet.addMergedRegion(srcSheet.getMergedRegion(index));
+            int numb = srcSheet.getNumMergedRegions();
+            for (int index = 0; index < numb; index++) {
+                destSheet.addMergedRegion(srcSheet.getMergedRegion(index));
+            }
         } catch (Exception ex) {
 
         }
