@@ -123,7 +123,6 @@ public class ExcelSheetIntegrator {
     }
 
     private void copyMergedRegion(Sheet srcSheet, Sheet destSheet, int index) {
-        destSheet.setColumnWidth(index, srcSheet.getColumnWidth(index));
         try {
             destSheet.addMergedRegion(srcSheet.getMergedRegion(index));
         } catch (Exception ex) {
@@ -180,6 +179,12 @@ public class ExcelSheetIntegrator {
     private void copyCell(Cell srcCell, Cell destCell) {
         copyValue(srcCell, destCell);
         copyCellStyle(srcCell, destCell);
+        copyCellWidth(srcCell, destCell);
+    }
+
+    private void copyCellWidth(Cell srcCell, Cell destCell) {
+        int columnWidth = srcCell.getRow().getSheet().getColumnWidth(srcCell.getColumnIndex());
+        destCell.getRow().getSheet().setColumnWidth(destCell.getColumnIndex(), columnWidth);
     }
 
     private void copyValue(Cell srcCell, Cell destCell) {
